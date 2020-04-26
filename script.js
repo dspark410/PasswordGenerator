@@ -15,7 +15,7 @@ function generatePassword() {
     
     while (
         specialCharacters === false && 
-        numericCharacters === false&& 
+        numericCharacters === false && 
         lowercaseCharacters === false && 
         uppercaseCharacters === false
         ) {
@@ -50,7 +50,7 @@ function generatePassword() {
             var random = Math.floor(Math.random() * allowed.length)
             totalPassword += allowed[random];
         }
-
+        
     alert(totalPassword);
 }
 

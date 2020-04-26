@@ -13,6 +13,7 @@
     position: relative;
     border-radius: 12px;
 }
+
 .header {
     text-align: center;
     background-color: cornflowerblue;
@@ -28,8 +29,9 @@
     font-size: 16px;
     border: dashed 2px lightgrey;
     text-align: center;
-    padding: 20px 10px 
-    
+    padding: 20px 10px;
+    color: lightskyblue;
+    overflow: auto;  
 }
 
 .hr {
@@ -39,6 +41,7 @@
 .btn {
     color: white;
 }
+
 .btn-light {
     background-color: lightblue;
     border: none;
@@ -55,8 +58,6 @@
     background-color: SkyBlue;
     color: white;
 }
-
-
 
 @media(max-width: 600px) {
 }

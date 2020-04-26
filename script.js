@@ -1,3 +1,5 @@
+generatePassword();
+
 function generatePassword() {
     var passwordQuestion = 0;
     while (
@@ -32,6 +34,8 @@ function generatePassword() {
         var upper = "ABCDEFGHIJKLMNOPARSTUVQXYZ";
         var allowed = "";
         
+        //If a certain string had less characters ie: nums vs upper. How would you guarentee a number is included?
+        
         if (specialCharacters === true) {
             allowed += special
         }
@@ -51,7 +55,21 @@ function generatePassword() {
             totalPassword += allowed[random];
         }
         
-    alert(totalPassword);
-}
+    alert("Please press the Generate Password button.");
+    
+    var showPassword = document.getElementById("showPassword");
+    var generateButton = document.getElementById("generatePassword");
 
-generatePassword()
+    function displayPassword() {
+        var totalPassword = "";
+        for (var i = 0; i < passwordQuestion; i++){
+            var random = Math.floor(Math.random() * allowed.length)
+            totalPassword += allowed[random];
+        }
+        showPassword.textContent = totalPassword;   
+    }
+
+    generateButton.addEventListener("click", function() {       
+        displayPassword()
+    });   
+}

@@ -33,28 +33,7 @@ function generatePassword() {
         var lower = "abcdefghijklmnopqrstuvwxyz";
         var upper = "ABCDEFGHIJKLMNOPARSTUVQXYZ";
         var allowed = "";
-        
-        //If a certain string had less characters ie: nums vs upper. How would you guarentee a number is included?
-        
-        if (specialCharacters === true) {
-            allowed += special
-        }
-        if (numericCharacters === true) {
-            allowed += nums
-        }
-        if (lowercaseCharacters === true) {
-            allowed += lower
-        }
-        if (uppercaseCharacters === true) {
-            allowed += upper
-        }
-
-        var totalPassword = "";
-        for (var i = 0; i < passwordQuestion; i++){
-            var random = Math.floor(Math.random() * allowed.length)
-            totalPassword += allowed[random];
-        }
-        
+          
     alert("Please press the Generate Password button.");
     
     var showPassword = document.getElementById("showPassword");
@@ -62,10 +41,29 @@ function generatePassword() {
 
     function displayPassword() {
         var totalPassword = "";
-        for (var i = 0; i < passwordQuestion; i++){
+       
+        if (specialCharacters === true) {
+            allowed += special
+            totalPassword += special[Math.floor(Math.random() * special.length)];
+        }
+        if (numericCharacters === true) {
+            allowed += nums
+            totalPassword += nums[Math.floor(Math.random() * nums.length)];
+        }
+        if (lowercaseCharacters === true) {
+            allowed += lower
+            totalPassword += lower[Math.floor(Math.random() * lower.length)];
+        }
+        if (uppercaseCharacters === true) {
+            allowed += upper
+            totalPassword += upper[Math.floor(Math.random() * upper.length)];
+        }
+
+        for (var i = totalPassword.length; i < passwordQuestion; i++){
             var random = Math.floor(Math.random() * allowed.length)
             totalPassword += allowed[random];
         }
+
         showPassword.textContent = totalPassword;   
     }
 
